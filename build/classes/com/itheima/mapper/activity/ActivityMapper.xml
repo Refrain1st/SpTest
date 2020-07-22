@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itheima.mapper.activity.ActivityMapper">
+	<!--resultType 返回类型 sql语句最好在数据库里执行成功保证没有语法错误再拷贝过来 -->
+	<select id="findActivity" resultType="Activity"
+		parameterType="String">
+		select * from activity where
+		activityName=#{activityName}
+	</select>
+	<select id="findActivitys" resultType="Activity">
+		select * from activity
+	</select>
+	<insert id="insertActivity" parameterType="Activity">
+		INSERT INTO
+		activity(activityName,activityCredits,activityClub,activityFile，activityStatus)
+		VALUES(#{activityName},#{activityCredits},#{activityClub},#{activityFile},'no')
+	</insert>
+	<delete id="deleteActivity" parameterType="String">
+		delete from activity
+		where activityName=#{activityName}
+	</delete>
+	<update id="updateActivity" parameterType="Activity">
+		update activity set
+		activityName=#{activityName},activityCredits=#{activityCredits},activityFile=#{activityFile}
+		where activityId=#{activityId}
+	</update>
+	<update id="startActivity" parameterType="Activity">
+		update activity set
+		activityStatus = #{activityStatus}
+		where activityName=#{activityName}
+	</update>
+	<update id="overActivity" parameterType="Activity">
+		update activity set
+		activityStatus = #{activityStatus}
+		where activityName=#{activityName}
+	</update>
+	<update id="upCredit" parameterType="Activity">
+		update user set
+		userCredit =
+		userCredit + #{activityCredits}
+		where userActivity = #{activityName}
+	</update>
+	<!-- 多字段查询 -->
+	<!-- <select id="">
+		SELECT * FROM club WHERE
+		FIND_IN_SET('开心', clubMember)
+	</select> -->
+</mapper>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>test-mvc-1</display-name>
+	<!-- 欢迎页面 -->
+	<welcome-file-list>
+		
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+		    <!--contextConfigLocation表示的是配置文件的地址  -->
+			<param-name>contextConfigLocation</param-name>
+			<!--默认值：（servlet-name）-config.xml   classpath:src -->
+			<param-value>classpath:springmvc-config.xml</param-value>
+		</init-param>
+		<!-- 启动时候是否立即加载 -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>    
+    <servlet-name>default</servlet-name>    
+    <url-pattern>*.js</url-pattern>    
+    <url-pattern>*.css</url-pattern> 
+    <url-pattern>*.html</url-pattern>    
+    <url-pattern>/assets/*"</url-pattern>    
+    <url-pattern>/images/*</url-pattern>    
+</servlet-mapping>
+</web-app>

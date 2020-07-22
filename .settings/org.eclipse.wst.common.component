@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+<<<<<<< HEAD
+    <wb-module deploy-name="SpTest">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="SpTest"/>
+        <property name="java-output-path" value="/SpTest/build/classes"/>
+=======
+    <wb-module deploy-name="cluba">
+        <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
+        <property name="context-root" value="cluba"/>
+        <property name="java-output-path" value="/cluba/build/classes"/>
+>>>>>>> d8e7cf7... check project -0
+    </wb-module>
+</project-modules>

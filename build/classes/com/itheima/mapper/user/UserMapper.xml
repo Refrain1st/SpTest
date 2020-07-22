@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itheima.mapper.user.UserMapper">
+	<!--resultType 返回类型 sql语句最好在数据库里执行成功保证没有语法错误再拷贝过来 -->
+	<select id="findUserByUserName" resultType="User"
+		parameterType="User">
+		select * from user
+		where userStuId=#{userStuId} and userPassword=#{userPassword}
+	</select>
+	<select id="findUsers" resultType="User">
+		select * from user
+	</select>
+	<!-- 权限检测 -->
+	<select id="checkHolder" resultType="User"
+		parameterType="User">
+		select * from user
+		where userStuId=#{userStuId} and userPassword=#{userPassword} and userAdm = 'Y'
+		<!-- select *
+		from user,holder
+		where user.userStuId=#{userStuId} and user.userPassword=#{userPassword} and holder.holderNum =#{userStuId} -->
+	</select>
+	<insert id="insertUser" parameterType="User">
+		INSERT INTO
+		user(userStuId,userName,userClub,userCredit,userPassword)
+		VALUES(#{userStuId},#{userName},#{userClub},#{userCredit},#{userPassword})
+	</insert>
+	<delete id="delUserByUserName" parameterType="String">
+		delete from user where userName=#{userName}
+	</delete>
+	<update id="updateUser" parameterType="User">
+	    update user set password=#{password} and userName=#{userName}
+	</update>
+	
+	<update id="join"  parameterType="User">
+		update user set userActivity=#{userActivity} WHERE userName = #{userName}
+	</update>
+	
+</mapper>

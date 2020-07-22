@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.ico">
+<meta charset="UTF-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no" />
+<title>主页</title>
+<script type="text/javascript" src="speedtest.js"></script>
+
+<script src="js/test.js" type="text/javascript" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="css/test.css" />
+
+</head>
+<body>
+	<h1>网速查源</h1>
+	<div id="startStopBtn" onclick="startStop()"></div>
+	<div id="serverId"></div>
+	<div id="test">
+		<div class="testGroup">
+			<div class="testArea">
+				<div class="testName">下载</div>
+				<div id="dlText" class="meterText"></div>
+				<div class="unit">Mbps</div>
+			</div>
+			<div class="testArea">
+				<div class="testName">上传</div>
+				<div id="ulText" class="meterText"></div>
+				<div class="unit">Mbps</div>
+			</div>
+		</div>
+		<div class="testGroup">
+			<div class="testArea">
+				<div class="testName">Ping</div>
+				<div id="pingText" class="meterText"></div>
+				<div class="unit">ms</div>
+			</div>
+			<div class="testArea">
+				<div class="testName">抖动</div>
+				<div id="jitText" class="meterText"></div>
+				<div class="unit">ms</div>
+			</div>
+		</div>
+	</div>
+	<div id="menu" class="menu-list">
+
+		<div id="menu-1st" class="menu-list-1st">
+			<div id="u78" class="text" style="float:left; width:33.3%">
+				<p>
+					<a href="main.html"><span>首页</span></a>
+				</p>
+			</div>
+		</div>
+
+		<div id="menu-2nd" class="menu-list-2nd">
+			<div id="u80" class="text" style="float:left; width:33.3%">
+				<p>
+					<a href="app.html"><span>网络查源</span></a>
+				</p>
+			</div>
+		</div>
+
+		<div id="menu-3rd" class="menu-list-3rd">
+			<div id="u82" class="text" style="float:left; width:33.3%">
+				<p>
+<<<<<<< HEAD
+					<a href="main1.html"><span>个人</span></a>
+=======
+					<a href="main1.html"><span>个人主页</span></a>
+>>>>>>> d8e7cf7... check project -0
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		initUI();
+		loadServers();
+	</script>
+</body>
+</html>

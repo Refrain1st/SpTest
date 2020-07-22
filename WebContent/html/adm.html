@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<!-- jQuery -->
+<script src="../js/external/jquery-3.4.1.min.js" type="text/javascript"
+	charset="utf-8"></script>
+<!-- DataTables -->
+<link rel="stylesheet" type="text/css"
+	href="../css/external/dataTables.bootstrap.css" />
+<script src="../js/external/jquery.dataTables.min.js"
+	type="text/javascript" charset="utf-8"></script>
+<script src="../js/external/dataTables.bootstrap.js"
+	type="text/javascript" charset="utf-8"></script>
+<!--界面库 bootstrap-->
+<link rel="stylesheet" type="text/css"
+	href="../css/external/bootstrap.min.css" />
+<script src="../js/external/bootstrap.min.js" type="text/javascript"
+	charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="../css/index.css" />
+<script type="text/javascript">
+	window.onload = getCustomer;
+	function getCustomer() {
+		//ajax();
+		//ajax_query();
+		getData();
+	}
+</script>
+<body>
+
+	<div>
+		<button type="button" class="btn btn-primary" onclick="refreshData()">刷新</button>
+	</div>
+	<br>
+
+	<table id="customerList" class="table table-striped">
+		<thead>
+			<tr>
+				<th>学号</th>
+				<th>姓名</th>
+				<th>所属社团</th>
+				<th>权限</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+	</table>
+	<!-- 权限操作确认框 -->
+	<div class="modal small fade" id="editDialog" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+					<h3 id="myModalLabel">操作确认</h3>
+				</div>
+				<div class="modal-body">
+					<h4 style="text-align: center;">
+						<i class="fa fa-warning modal-fa" style="color: red;"></i>
+						请确认给与权限
+					</h4>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-danger" id="upButton" onclick="giveY()" data-account=""
+						data-complete-text="正在操作...">确认</button>
+					<button class="btn btn-default" data-dismiss="modal"
+						aria-hidden="true">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal small fade" id="delCustomerDialog" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"
+						aria-hidden="true">×</button>
+					<h3 id="myModalLabel">操作确认</h3>
+				</div>
+				<div class="modal-body">
+					<h4 style="text-align: center;">
+						<i class="fa fa-warning modal-fa" style="color: red;"></i>
+						请确认收回权限
+					</h4>
+				</div>
+				<div class="modal-footer">
+					<button class="btn btn-danger" id="delButton" onclick="backN()" data-account=""
+						data-complete-text="正在操作...">确认</button>
+					<button class="btn btn-default" data-dismiss="modal"
+						aria-hidden="true">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script type="text/javascript" src="../js/utils.js"></script>
+<script type="text/javascript" src="../js/adm.js">
+
+
+</script>
+</html>

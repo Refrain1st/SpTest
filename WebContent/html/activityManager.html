@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+</head>
+
+<!-- jQuery -->
+<script src="../js/external/jquery-3.4.1.min.js" type="text/javascript"
+	charset="utf-8"></script>
+<!-- DataTables -->
+<link rel="stylesheet" type="text/css"
+	href="../css/external/dataTables.bootstrap.css" />
+<script src="../js/external/jquery.dataTables.min.js"
+	type="text/javascript" charset="utf-8"></script>
+<script src="../js/external/dataTables.bootstrap.js"
+	type="text/javascript" charset="utf-8"></script>
+<!--界面库 bootstrap-->
+<link rel="stylesheet" type="text/css"
+	href="../css/external/bootstrap.min.css" />
+<script src="../js/external/bootstrap.min.js" type="text/javascript"
+	charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="../css/index.css" />
+<script type="text/javascript">
+	window.onload = getCustomer;
+	function getCustomer() {
+		list();
+	}
+</script>
+<body>
+
+	<table id="activityList" class="table table-striped">
+		<thead>
+			<tr>
+				<th>活动状态</th>
+				<th>活动名字</th>
+				<th>活动学分</th>
+				<th>活动社团</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+	</table>
+
+<div>
+java杯
+<button onclick="startB()">活动开始</button>
+<button onclick="overB()">活动结束</button>
+</div>
+	
+</div>
+	<!-- <div class="modal" id="warnS">
+		modal默认是隐藏的
+		<div class="modal-dialog">
+			<div class="modal-content">
+				头部关闭按钮
+				<div class="modal-header">
+					<button type="button" class="close myclose" data-dismiss="modal">
+						<span>&times</span>
+					</button>
+					<div class="h3 modal-title">操作确认</div>
+					内容部分
+					<div class="modal-body">
+						<div class="form-group addDataPlane">
+							<button class="btn btn-default navbar-right" onclick="startB()">确定</button>
+							<button class="btn btn-default " data-dismiss="modal"
+								aria-hidden="true">取消</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal" id="warnO">
+		modal默认是隐藏的
+		<div class="modal-dialog">
+			<div class="modal-content">
+				头部关闭按钮
+				<div class="modal-header">
+					<button type="button" class="close myclose" data-dismiss="modal">
+						<span>&times</span>
+					</button>
+					<div class="h3 modal-title">操作确认</div>
+					内容部分
+					<div class="modal-body">
+						<div class="form-group addDataPlane">
+							<button class="btn btn-default navbar-right" onclick="overB()">确定</button>
+							<button class="btn btn-default " data-dismiss="modal"
+								aria-hidden="true">取消</button>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ -->
+</body>
+
+<script type="text/javascript" src="../js/utils.js"></script>
+<script type="text/javascript" src="../js/activity.js">
+
+
+</script>
+</html>

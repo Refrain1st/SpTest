@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itheima.mapper.CustomerMapper">
+	<!--resultType 返回类型 sql语句最好在数据库里执行成功保证没有语法错误再拷贝过来 -->
+	<select id="findCustomerById" resultType="Customer"
+		parameterType="Integer">
+		select * from user where id=#{id}
+	</select>
+	<select id="findCustomer" resultType="Customer">
+		select * from user
+	</select>
+	<insert id="insertCustomer" parameterType="Customer">
+		INSERT INTO
+		user(userStuId,userName,userClub,userCredit,userPassword)
+		VALUES(#{userStuId},#{userName},#{userClub},0,#{userPassword})
+	</insert>
+	<delete id="delCustomerById" parameterType="Integer">
+		delete from user where userStuId=#{userStuId}
+	</delete>
+	<update id="updateCustomerById" parameterType="Customer">
+	    update user set userClub=#{userClub},userPassword=#{userPassword} where userStuId=#{userStuId}
+	</update>
+	<update id="updateY" parameterType="Customer">
+		update user set userAdm='Y' where userStuId=#{userStuId}
+	</update>
+	<update id="updateN" parameterType="Customer">
+		update user set userAdm=' ' where userStuId=#{userStuId}
+	</update>
+	
+</mapper>

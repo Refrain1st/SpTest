@@ -1,0 +1,45 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<link rel="stylesheet" type="text/css" href="../css/activity.css" />
+<script src="../js/external/jquery-3.4.1.min.js"></script>
+<script src="../js/external/bootstrap.min.js"></script>
+</head>
+<script type="text/javascript">
+	window.onload = getCustomer;
+	function getCustomer() {
+		getData();
+		userLoad();
+	}
+</script>
+<body>
+	<div id="clubbody">
+	<iframe id="content" frameborder="no" scrolling="no" src="../loginout.html"></iframe>
+		<!-- 个人信息导框 -->
+		<div class="panel-body">
+			<p id="lead">管理员</p>
+			<hr>
+			<i id="name">段唐</i> <i id="stuid">41706113</i>
+		</div>
+		<!-- 搜索框 -->
+		<div class="well">
+			<form class="form">
+				<h4 class="tst	">搜索</h4>
+				<div class="input-group text-center">
+					<input type="text" class="selectName" name="select"
+						placeholder="活动或社团名称"> <span class="input-group-btn"><button id="test"
+							class="btn btn-lg btn-primary" type="button" onclick="getData()">OK</button></span>
+				</div>
+			</form>
+		</div>
+		<!-- 活动框 -->
+		<div class="panel-activity">
+		
+		</div>
+		
+	</div>
+
+	<script src="../js/activity.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

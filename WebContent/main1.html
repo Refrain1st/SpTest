@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>客户管理系统</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/font-awesome/4.6.0/css/font-awesome.min.css">
+	
+	<link rel="stylesheet" href="css/index1.css" />
+	<!-- jQuery -->
+	<script src="js/external/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<!-- DataTables -->
+	<link rel="stylesheet" type="text/css" href="css/external/dataTables.bootstrap.css" />
+	<script src="js/external/jquery.dataTables.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/external/dataTables.bootstrap.js" type="text/javascript" charset="utf-8"></script>
+	<!--界面库 bootstrap-->
+	<!-- <link rel="stylesheet" type="text/css" href="css/external/bootstrap.min.css" /> -->
+	<script src="js/external/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<!-- 其他js引用 -->
+	<script type="text/javascript" src="js/user.js"></script>
+	<script type="text/javascript" src="js/customer.js"></script>
+	<script type="text/javascript">
+	window.onload = getSession();
+	
+		function showContent(msg) {
+			if(msg == 'actM') {
+				$(".showdiv").attr("src", "html/activityManager.html");
+			} 
+			else if(msg == 'activity'){
+				$(".showdiv").attr("src", "html/activity.html");
+			}
+			else if(msg == 'adm'){
+				$(".showdiv").attr("src", "html/adm.html");
+			}
+			else{
+				$(".showdiv").attr("src", "html/customerManager.html");
+			}
+		}
+	</script>
+
+	<body>
+
+		<main>
+			<!-- 侧边栏 -->
+		<div class="s-side">
+			
+			<ul>
+				<!--这部分是导航栏信息。-->
+				<li class="s-firstItem first">
+					<a href="#">
+						<i class="fa fa-home"></i>
+						<span>维护首页</span>
+					</a>
+				</li>
+		
+				<li class="first">
+					<div class="d-firstNav s-firstNav clearfix">
+						<i class="fa fa-bars"></i>
+						<span>后台管理</span>
+						<i class="fa fa-caret-right fr "></i>
+					</div>
+					<ul class="d-firstDrop s-firstDrop">
+						<li>
+							<div class="d-secondNav s-secondNav">
+								<i class="fa fa-minus-square-o"></i>
+								<span>管理层</span>
+								<i class="fa fa-caret-right fr"></i>
+							</div>
+							<ul class="d-secondDrop s-secondDrop">
+								<li class="s-thirdItem" onclick="showContent('customer')">
+									<span>成员</span>
+								</li>
+								<li class="s-thirdItem" onclick="showContent('product')">
+									<span>活动</span>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<div class="d-secondNav s-secondNav">
+								<i class="fa fa-minus-square-o"></i>
+								<span>操作记录</span>
+								<i class="fa fa-caret-right fr "></i>
+							</div>
+							<ul class="d-secondDrop s-secondDrop">
+								<li class="s-thirdItem">
+									<a href="#">加分记录</a>
+								</li>
+							</ul>
+						</li>
+						<li class="s-secondItem" onclick="showContent('adm')">
+								<i class="fa fa-minus-square-o"></i>
+								<span>权限管理</span>
+						
+						</li>
+					</ul>
+				</li>
+				<li class="first">
+					<div class="d-firstNav s-firstNav">
+						<i class="fa fa-bars"></i>
+						<span>活动管理</span>
+						<i class="fa fa-caret-right fr"></i>
+					</div>
+					<ul class="d-firstDrop s-firstDrop">
+						<li class="s-secondItem" onclick="showContent('actM')">
+							<i class="fa fa-minus-square-o">
+								<span>活动管理</span>
+							</i>
+						</li>
+						<li class="s-secondItem" onclick="showContent('activity')">
+							<i class="fa fa-minus-square-o">
+								<span>活动公示</span>
+							</i>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="">
+			<div class="col-md-10 col-sm-10">
+				<iframe id="content" frameborder="no" scrolling="no" src="loginout.html"></iframe>
+				<iframe id="content" class="showdiv" frameborder="no" scrolling="no" src="html/customerManager.html"></iframe>
+			</div>	
+		</div>
+		</main>
+<script type="text/javascript" src="js/external/jquery-3.4.1.min.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+	</body>
+
+</html>
